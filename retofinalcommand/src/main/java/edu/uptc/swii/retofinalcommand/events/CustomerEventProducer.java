@@ -1,4 +1,4 @@
-package edu.uptc.swii.retofinalcommand.Events;
+package edu.uptc.swii.retofinalcommand.events;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;

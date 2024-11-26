@@ -3,8 +3,8 @@ package edu.uptc.swii.retofinalcommand.service.customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.uptc.swii.retofinalcommand.Events.CustomerEventProducer;
 import edu.uptc.swii.retofinalcommand.domain.customer.Customer;
+import edu.uptc.swii.retofinalcommand.events.CustomerEventProducer;
 
 @Service
 public class CustomerService {

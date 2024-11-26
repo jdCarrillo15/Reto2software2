@@ -3,8 +3,8 @@ package edu.uptc.swii.retofinalcommand.service.order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.uptc.swii.retofinalcommand.Events.OrderEventProducer;
 import edu.uptc.swii.retofinalcommand.domain.order.Order;
+import edu.uptc.swii.retofinalcommand.events.OrderEventProducer;
 import edu.uptc.swii.retofinalcommand.repository.OrderRepository;
 
 @Service
