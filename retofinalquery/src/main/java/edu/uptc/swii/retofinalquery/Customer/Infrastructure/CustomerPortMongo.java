@@ -10,7 +10,7 @@ public class CustomerPortMongo implements CustomerAdapter {
 
     @Override
     public void saveCustomer(CustomerEntity customer) {
-        customerRepository.save(customer);
+        customerRepository.insert(customer);
     }
 
     @Override
@@ -18,6 +18,7 @@ public class CustomerPortMongo implements CustomerAdapter {
         customerRepository.save(customer);
     }
 
+    @Override
     public CustomerEntity getCustomerByDocument(String document) {
         return customerRepository.findById(document).get();
     }

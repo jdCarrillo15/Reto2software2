@@ -12,13 +12,13 @@ public class CustomerEventProducer {
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
     private String type;
-    private String customer;
+    private CustomerEntity customer;
 
     public String getType() {
         return type;
     }
 
-    public String getCustomer() {
+    public CustomerEntity getCustomer() {
         return customer;
     }
 

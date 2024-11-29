@@ -12,7 +12,7 @@ public class CustomerEventConsumer {
     @Autowired
     private CustomerService customerService;
 
-    @KafkaListener(topics = "add-customer-topic", groupId = "customer-group")
+    @KafkaListener(topics = "create-customer-topic", groupId = "customer-group")
     public void addCustomerConsume(String message) {
         message = message.replace("\\", "");
         message = message.substring(1, message.length() - 1);

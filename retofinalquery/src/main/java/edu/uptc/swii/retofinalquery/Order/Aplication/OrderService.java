@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.uptc.swii.retofinalquery.Order.Domain.Order;
+import edu.uptc.swii.retofinalquery.Order.Infrastructure.OrderEntity;
 import edu.uptc.swii.retofinalquery.Order.Infrastructure.OrderRepository;
 
 @Service
@@ -17,15 +17,15 @@ public class OrderService {
         this.orderRepository = orderRepository;
     }
 
-    public void createOrder(Order order) {
+    public void createOrder(OrderEntity order) {
         orderRepository.save(order);
     }
 
-    public void updateOrder(Order order) {
+    public void updateOrder(OrderEntity order) {
         orderRepository.save(order);
     }
 
-    public List<Order> searchOrderByCustomerID(String customerid) {
+    public List<OrderEntity> searchOrderByCustomerID(String customerid) {
         return orderRepository.findByCustomerid(customerid);
     }
 

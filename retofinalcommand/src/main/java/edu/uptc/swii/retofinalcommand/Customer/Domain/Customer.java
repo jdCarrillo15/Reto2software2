@@ -2,8 +2,8 @@ package edu.uptc.swii.retofinalcommand.Customer.Domain;
 
 public class Customer {
     private String document;
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
     private String email;
     private String phone;
     private Address address;
@@ -13,8 +13,8 @@ public class Customer {
 
     public Customer(String document, String firstName, String lastName, String email, String phone, Address address) {
         this.document = document;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstname = firstName;
+        this.lastname = lastName;
         this.email = email;
         this.phone = phone;
         this.address = address;
@@ -28,20 +28,20 @@ public class Customer {
         this.document = document;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstName) {
+        this.firstname = firstName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastName) {
+        this.lastname = lastName;
     }
 
     public String getEmail() {
@@ -70,7 +70,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", phone=" + phone
+        return "Customer [firstName=" + firstname + ", lastName=" + lastname + ", email=" + email + ", phone=" + phone
                 + ", address=" + address + "]";
     }
 }
