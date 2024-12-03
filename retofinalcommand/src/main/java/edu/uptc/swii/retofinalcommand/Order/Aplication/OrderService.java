@@ -3,7 +3,6 @@ package edu.uptc.swii.retofinalcommand.Order.Aplication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.uptc.swii.retofinalcommand.Order.Domain.Order;
 import edu.uptc.swii.retofinalcommand.Order.Infrastructure.OrderEntity;
 import edu.uptc.swii.retofinalcommand.Order.Infrastructure.OrderRepository;
 

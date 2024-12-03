@@ -27,13 +27,7 @@ public class CustomerService {
     }
 
     public Customer getCustomerByDocument(String document) {
-        CustomerEntity customerEntity = customerAdapter.getCustomerByDocument(document);
-        if (customerEntity != null) {
-            Customer customer = new Customer(customerEntity.getDocument(), customerEntity.getFirstname(),
-                    customerEntity.getLastname(), customerEntity.getEmail(), customerEntity.getPhone(), jsonUtils.fromJson(customerEntity.getAddress(), Address.class));
-            return customer;
-        }
-        return null;
+        return customerAdapter.getCustomerByDocument(document);
     }
 
 }

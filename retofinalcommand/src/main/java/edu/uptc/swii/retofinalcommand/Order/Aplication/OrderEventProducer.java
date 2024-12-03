@@ -23,10 +23,9 @@ public class OrderEventProducer {
     }
 
     public void sendMessage(String topic, OrderEntity order) {
-        String message = new String();
         JsonUtils jsonUtils = new JsonUtils();
-        message = jsonUtils.toJson(order);
+        String message = jsonUtils.toJson(order);
         System.out.println("OrderEventProducer sendMessage: " + message);
-        kafkaTemplate.send(topic, order.toString());
+        kafkaTemplate.send(topic, message);
     }
 }

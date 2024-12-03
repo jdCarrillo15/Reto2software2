@@ -11,7 +11,7 @@ public class CustomerService {
     @Autowired
     private CustomerAdapterOut customerAdapter;
     private CustomerEventProducer customerEventProducer;
-    private final String CREATE_CUSTOMER_TOPIC = "create_customer_topic";
+    private final String CREATE_CUSTOMER_TOPIC = "create-customer-topic";
 
     public CustomerService(CustomerPortMysql customerAdapter, CustomerEventProducer customerEventProducer) {
         this.customerAdapter = customerAdapter;
