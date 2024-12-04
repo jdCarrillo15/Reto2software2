@@ -1,47 +1,53 @@
 // src/components/Login.js
 import React, { useState } from 'react';
-import { InputText } from 'primereact/inputtext';
-import { Password } from 'primereact/password';
-import { Button } from 'primereact/button';
-import AuthService from '../service/AuthService';
-import './Login.css'; // Asegúrate de que el CSS sea opcional
+import { login } from '../service/AuthService';
+import { useNavigate } from 'react-router-dom';
 
 const Login = ({ onLoginSuccess }) => {
-    const [credentials, setCredentials] = useState({
-        username: '',
-        password: '',
-    });
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setCredentials({ ...credentials, [name]: value });
-    };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await AuthService.login(credentials.username, credentials.password);
-            localStorage.setItem('token', response.data.token); // Guarda el token en localStorage
-            onLoginSuccess(); // Llama a la función para actualizar el estado en el Menu
-        } catch (error) {
-            alert('Error en el inicio de sesión');
-        }
-    };
+    try {
+      await login(username, password);
+      onLoginSuccess();  // Cambia el estado en Menu.js para reflejar que el usuario está logueado
+      navigate('/');  // Redirigir al usuario a la página de inicio
+    } catch (error) {
+      setError('Invalid credentials');
+    }
+  };
 
-    return (
-        <div className="login">
-            <h1 className="title">Login</h1>
-            <form onSubmit={handleSubmit}>
-                <div className="p-field">
-                    <InputText id="username" name="username" placeholder="Username" onChange={handleChange} required />
-                </div>
-                <div className="p-field">
-                    <Password id="password" name="password" placeholder="Password" onChange={handleChange} required />
-                </div>
-                <Button className='button' label="Login" icon="pi pi-sign-in" type="submit" />
-            </form>
+  return (
+    <div>
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
         </div>
-    );
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  );
 };
 
 export default Login;
