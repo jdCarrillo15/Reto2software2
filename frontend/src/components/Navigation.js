@@ -18,13 +18,6 @@ const Navigation = ({ isLoggedIn, onLogout }) => {
                   },
               },
               {
-                  label: "Show Customers",
-                  icon: "pi pi-fw pi-users",
-                  command: () => {
-                      window.location = "/showcustomers";
-                  },
-              },
-              {
                 label: "Show Customer",
                 icon: "pi pi-fw pi-user",
                 command: () => {
@@ -39,14 +32,7 @@ const Navigation = ({ isLoggedIn, onLogout }) => {
                 },
             },
             {
-                label: "Orders",
-                icon: "pi pi-fw pi-receipt",
-                command: () => {
-                    window.location = "/orderlist";
-                },
-            },
-            {
-                label: "Order",
+                label: "Show Order",
                 icon: "pi pi-fw pi-box",
                 command: () => {
                     window.location = "/orderbycustomid";

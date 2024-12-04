@@ -15,6 +15,7 @@ import java.net.URISyntaxException;
 @RestController
 @RequestMapping("/keycloak/user")
 @PreAuthorize("hasRole('admin_client_role')")
+@CrossOrigin("*")
 public class KeycloakController {
 
     @Autowired

@@ -69,11 +69,17 @@ function AddCustomer() {
       <Toast ref={toast} />
       <Panel
         header="Add Customer"
-        style={{ width: "80%", marginTop: "100px", margin: "0 auto" }}
+        style={{ width: "100vh", marginTop: "100px", margin: "0 auto" }}
         className="Panel1"
       >
-        <form onSubmit={(e) => RegisterCustomer(e)}>
-          <div className="p-fluid">
+        <form
+          onSubmit={(e) => RegisterCustomer(e)}
+          style={{ width: "100%", marginTop: "100px", margin: "0 auto" }}
+        >
+          <div
+            className="p-fluid"
+            style={{ width: "100%", marginTop: "100px", margin: "0 auto" }}
+          >
             <div className="p-field">
               <label htmlFor="document">Document</label>
               <InputText

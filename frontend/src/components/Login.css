@@ -1,16 +1,14 @@
-/* Login.css */
-
 /* Fondo del contenedor del login */
-div {
+.login-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff; /* Fondo suave */
+    background-color: #ffffff;
 }
 
 /* Título del formulario */
-h2 {
+.login-container h2 {
     font-size: 2rem;
     color: #333;
     margin-bottom: 20px;
@@ -18,30 +16,30 @@ h2 {
 }
 
 /* Estilo de los campos del formulario */
-form {
-    background-color: #fff; /* Fondo blanco */
+.login-container form {
+    background-color: #fff;
     padding: 40px 30px;
     border-radius: 8px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
     transition: box-shadow 0.3s ease;
 }
 
 /* Efecto cuando el formulario recibe foco */
-form:hover {
+.login-container form:hover {
     box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo de los campos de texto */
-div div {
+.login-container div div {
     margin-bottom: 20px;
     width: 100%;
 }
 
 /* Estilo de los campos de texto */
-input[type="text"],
-input[type="password"] {
+.login-container input[type="text"],
+.login-container input[type="password"] {
     width: 100%;
     padding: 12px 15px;
     border-radius: 6px;
@@ -53,15 +51,15 @@ input[type="password"] {
 }
 
 /* Foco en los campos de texto */
-input[type="text"]:focus,
-input[type="password"]:focus {
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
     border-color: #4CAF50;
     background-color: #fff;
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.4); /* Efecto de sombra */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
 }
 
 /* Estilo del botón */
-button {
+.login-container button {
     width: 100%;
     background-color: #4CAF50;
     color: #fff;
@@ -74,25 +72,25 @@ button {
 }
 
 /* Efecto hover en el botón */
-button:hover {
+.login-container button:hover {
     background-color: #45a049;
 }
 
 /* Estilo para el texto de error */
-p {
+.login-container p {
     color: #e74c3c;
     font-size: 0.9rem;
     margin-top: 10px;
     text-align: center;
 }
 
-/* Diseño responsivo: Reducir el tamaño en pantallas pequeñas */
+/* Diseño responsivo */
 @media (max-width: 480px) {
-    div {
+    .login-container {
         padding: 20px;
     }
     
-    form {
+    .login-container form {
         max-width: 90%;
     }
 }

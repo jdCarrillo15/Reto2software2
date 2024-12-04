@@ -24,10 +24,11 @@ public class CustomerEntity {
     public CustomerEntity() {
     }
 
-    public CustomerEntity(String document, String firstname, String lastname, String email, String phone) {
+    public CustomerEntity(String document, String firstname, String lastname, String email, String address, String phone) {
         this.document = document;
         this.firstname = firstname;
         this.lastname = lastname;
+        this.address = address;
         this.email = email;
         this.phone = phone;
     }

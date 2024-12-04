@@ -30,7 +30,7 @@ public class OrderPortMongo implements OrderAdapter {
 
     @Override
     public List<Order> getOrderByCustomerId(String customerid) {
-        return orderEToOrder(orderRepository.findByCustomerid(customerid));
+        return orderEToOrder(orderRepository.findBycustomerid(customerid));
     }
 
     private List<Order> orderEToOrder(List<OrderEntity> orderEntities) {

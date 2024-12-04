@@ -11,7 +11,7 @@ const OrderForm = () => {
     customerid: "",
     orderid: "",
     status:{
-      status:"send",
+      status:"",
       description:"",
     }
   });
@@ -94,10 +94,13 @@ const OrderForm = () => {
       <Toast ref={toast} />
       <Panel
         header="Create Order"
-        style={{ width: "80%", marginTop: "100px", margin: "0 auto" }}
+        style={{ width: "100vh", marginTop: "100px", margin: "0 auto" }}
         className="Panel1"
       >
-        <form onSubmit={handleSubmit}>
+        <form
+          onSubmit={handleSubmit}
+          style={{ width: "100%", marginTop: "100px", margin: "0 auto" }}
+        >
           <InputText
             type="text"
             name="customerid"
