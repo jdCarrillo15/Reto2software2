@@ -1,5 +1,6 @@
 // src/service/AuthService.js
 const API_URL = 'http://localhost:9090/realms/spring-boot-real-dev/protocol/openid-connect/token'; // URL para obtener el token
+const KEYCLOAK_API_URL = 'http://localhost:11080/keycloak/user/create'; // URL de la API de Keycloak
 
 export const login = async (username, password) => {
   const body = new URLSearchParams({
@@ -7,7 +8,7 @@ export const login = async (username, password) => {
     username: username,
     password: password,
     grant_type: 'password',
-    client_secret: 'admin', // O tu secreto de cliente
+    client_secret: '9abKSrefv1FfulvUyEcZ9qIyf5RLoCfp', // O tu secreto de cliente
   });
 
   const response = await fetch(API_URL, {
@@ -27,6 +28,36 @@ export const login = async (username, password) => {
   }
 };
 
+const register = async (username, password, email, firstName, lastName) => {
+  const token = localStorage.getItem('token');
+  
+  if (!token) {
+    throw new Error('No token found, please log in first');
+  }
+
+  const response = await fetch(KEYCLOAK_API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      username: username,
+      email: email,
+      firstName: firstName,
+      lastName: lastName,
+      password: password,
+    }),
+  });
+
+  if (!response.ok) {
+    const data = await response.json();
+    return data;
+  } 
+};
+
+
+
 const logout = () => {
   localStorage.removeItem('token');
 };
@@ -39,4 +70,4 @@ const isAuthenticated = () => {
   return !!getToken();
 };
 
-export default { login, logout, getToken, isAuthenticated };
+export default { login, logout, getToken, isAuthenticated , register};

@@ -1,27 +1,99 @@
-/* src/components/Login.css */
-.login {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
+/* Login.css */
+
+/* Fondo del contenedor del login */
+div {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
+    background-color: #f4f7fc; /* Fondo suave */
 }
 
-.title {
-    text-align: center;
+/* Título del formulario */
+h2 {
+    font-size: 2rem;
+    color: #333;
     margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
 }
 
-.button{
-    margin-top: 20px;
-    margin-left: 25% ;
-}
-.p-field {
+/* Estilo de los campos del formulario */
+form {
+    background-color: #fff; /* Fondo blanco */
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); /* Sombra suave */
     width: 100%;
-    margin-bottom: 15px;
+    max-width: 400px;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Efecto cuando el formulario recibe foco */
+form:hover {
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de los campos de texto */
+div div {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Estilo de los campos de texto */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+}
+
+/* Foco en los campos de texto */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #4CAF50;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.4); /* Efecto de sombra */
+}
+
+/* Estilo del botón */
+button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto hover en el botón */
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para el texto de error */
+p {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Diseño responsivo: Reducir el tamaño en pantallas pequeñas */
+@media (max-width: 480px) {
+    div {
+        padding: 20px;
+    }
+    
+    form {
+        max-width: 90%;
+    }
 }

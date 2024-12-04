@@ -32,7 +32,7 @@ const Register = () => {
             );
             alert('Registro exitoso');
         } catch (error) {
-            alert('Error en el registro');
+            alert('Error en el registro: ' + error.message);
         }
     };
 
