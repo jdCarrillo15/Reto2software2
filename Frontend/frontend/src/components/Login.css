@@ -6,8 +6,7 @@ div {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f4f7fc; /* Fondo suave */
+    background-color: #ffffff; /* Fondo suave */
 }
 
 /* Título del formulario */
