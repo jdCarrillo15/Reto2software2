@@ -1,7 +1,7 @@
 // src/service/AuthService.js
 const API_URL = 'http://localhost:9090/realms/spring-boot-real-dev/protocol/openid-connect/token'; // URL para obtener el token
 
-const login = async (username, password) => {
+export const login = async (username, password) => {
   const body = new URLSearchParams({
     client_id: 'spring-client-api-rest',
     username: username,
@@ -39,4 +39,4 @@ const isAuthenticated = () => {
   return !!getToken();
 };
 
-export { login, logout, getToken, isAuthenticated };
+export default { login, logout, getToken, isAuthenticated };
