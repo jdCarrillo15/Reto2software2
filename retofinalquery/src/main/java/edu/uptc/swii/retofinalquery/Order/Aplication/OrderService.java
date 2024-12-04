@@ -5,28 +5,28 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import edu.uptc.swii.retofinalquery.Order.Domain.Order;
 import edu.uptc.swii.retofinalquery.Order.Infrastructure.OrderEntity;
-import edu.uptc.swii.retofinalquery.Order.Infrastructure.OrderRepository;
+import edu.uptc.swii.retofinalquery.Order.Infrastructure.OrderPortMongo;
 
 @Service
 public class OrderService {
     @Autowired
-    private OrderRepository orderRepository;
+    private OrderPortMongo orderPortMongo;
 
-    public OrderService(OrderRepository orderRepository) {
-        this.orderRepository = orderRepository;
+    public OrderService(OrderPortMongo orderPortMongo) {
+        this.orderPortMongo = orderPortMongo;
     }
 
     public void createOrder(OrderEntity order) {
-        orderRepository.save(order);
+        orderPortMongo.saveCustomer(order);
     }
 
     public void updateOrder(OrderEntity order) {
-        orderRepository.save(order);
+        orderPortMongo.updateCustomer(order);
     }
 
-    public List<OrderEntity> searchOrderByCustomerID(String customerid) {
-        return orderRepository.findByCustomerid(customerid);
+    public List<Order> searchOrderByCustomerID(String customerid) {
+        return orderPortMongo.getOrderByCustomerId(customerid);
     }
-
 }

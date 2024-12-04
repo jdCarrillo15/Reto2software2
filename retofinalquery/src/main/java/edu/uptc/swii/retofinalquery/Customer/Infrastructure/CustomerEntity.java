@@ -16,11 +16,11 @@ public class CustomerEntity {
     private String lastname;
     @JsonProperty("address")
     private String address;
-    @JsonProperty("email")
-    private String email;
     @JsonProperty("phone")
     private String phone;
-
+    @JsonProperty("email")
+    private String email;
+    
     public CustomerEntity() {
     }
 

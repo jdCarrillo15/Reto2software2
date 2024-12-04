@@ -2,10 +2,12 @@ package edu.uptc.swii.retofinalquery.Order.Aplication;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Service;
 
 import edu.uptc.swii.retofinalquery.Order.Infrastructure.OrderEntity;
 import edu.uptc.swii.retofinalquery.utils.JsonUtils;
 
+@Service
 public class OrderEventConsumer {
     @Autowired
     private OrderService OrderService;

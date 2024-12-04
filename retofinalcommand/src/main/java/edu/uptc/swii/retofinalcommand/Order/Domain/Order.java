@@ -38,10 +38,6 @@ public class Order {
         this.status = status;
     }
 
-    public String getStatusString() {
-        return status.toString();
-    }
-
     @Override
     public String toString() {
         return "Order [orderid=" + orderid + ", customerid=" + customerid + ", status=" + status + "]";

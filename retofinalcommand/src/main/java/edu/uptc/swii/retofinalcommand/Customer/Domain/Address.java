@@ -5,7 +5,7 @@ public class Address {
     private String number;
     private String city;
     private String country;
-    
+
     public Address() {
     }
 
@@ -50,6 +50,6 @@ public class Address {
 
     @Override
     public String toString() {
-        return street + "|" + number + "|" + city + "|" + country;
+        return street + "-" + number + "-" + city + "-" + country;
     }
 }

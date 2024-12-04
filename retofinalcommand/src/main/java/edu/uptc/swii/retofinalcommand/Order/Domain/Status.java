@@ -30,6 +30,6 @@ public class Status {
 
     @Override
     public String toString() {
-        return status + "|" + description;
+        return status + "-" + description.replaceAll(" ", "_");
     }
 }
