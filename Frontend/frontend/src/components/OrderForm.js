@@ -8,10 +8,10 @@ import { OrderService } from "../service/OrderService";
 
 const OrderForm = () => {
   const [order, setOrderData] = useState({
-    customerID: "",
-    orderID: "",
+    customerid: "",
+    orderid: "",
     status:{
-      status:"",
+      status:"send",
       description:"",
     }
   });
@@ -24,7 +24,7 @@ const OrderForm = () => {
   ];
 
   // const handleChange = (e) => {
-  //   setOrderData({ ...order, [e.target.name]: e.target.value });
+  //   setOrderData({ ...order, [e.target.name]: [e.target.value] });
   // };
 
   // const handleSubmit = (e) => {
@@ -100,36 +100,35 @@ const OrderForm = () => {
         <form onSubmit={handleSubmit}>
           <InputText
             type="text"
-            name="customerID"
+            name="customerid"
             placeholder="Customer ID"
-            value={order.customerID}
+            value={order.customerid}
             onChange={handleChange}
             required
           />
           <InputText
             type="text"
-            name="orderID"
+            name="orderid"
             placeholder="Order ID"
-            value={order.orderID}
+            value={order.orderid}
             onChange={handleChange}
             required
           />
           <Dropdown
-            name="status"
+            name="status.status"
             value={order.status.status}
-            onChange={handleChange}
             options={orderStatus}
             optionLabel="label"
             placeholder="Select a Status"
+            onChange={handleChange}
             required
           />
           <InputText
             type="text"
-            name="Status Description"
+            name="status.description"
             placeholder="Order Status Description"
             value={order.status.description}
             onChange={handleChange}
-            required
           />
           <Button type="submit">{"Create"}</Button>
         </form>

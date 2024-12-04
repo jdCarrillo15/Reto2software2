@@ -8,8 +8,8 @@ import { CustomerService } from "../service/CustomerService";
 function AddCustomer() {
   const [customer, setCustomer] = useState({
     document: "",
-    first_name: "",
-    last_name: "",
+    firstname: "",
+    lastname: "",
     address: {
       street: "",
       number: "",
@@ -85,20 +85,20 @@ function AddCustomer() {
               />
             </div>
             <div className="p-field">
-              <label htmlFor="first_name">First Name</label>
+              <label htmlFor="firstname">First Name</label>
               <InputText
-                id="first_name"
-                name="first_name"
+                id="firstname"
+                name="firstname"
                 className="p-inputtext-sm"
                 value={customer.first_name}
                 onChange={handleChange}
               />
             </div>
             <div className="p-field">
-              <label htmlFor="last_name">Last Name</label>
+              <label htmlFor="lastname">Last Name</label>
               <InputText
-                id="last_name"
-                name="last_name"
+                id="lastname"
+                name="lastname"
                 className="p-inputtext-sm"
                 value={customer.last_name}
                 onChange={handleChange}

@@ -22,11 +22,29 @@ export default class ShowCustomer extends Component {
     this.setState({ document: value });
   };
 
+  // handleFetchCustomer = () => {
+  //   this.setState({ loading: true, error: "" });
+  //   this.CustomerService.getCustomer(this.state.document)
+  //     .then((data) => {
+  //       this.setState({ customers: JSON.parse(data), loading: false });
+  //     })
+  //     .catch((err) => {
+  //       this.setState({ error: "Error al obtener el cliente", loading: false });
+  //       console.error(err);
+  //     });
+  // };
+
   handleFetchCustomer = () => {
-    this.setState({ loading: true, error: "" }); 
+    this.setState({ loading: true, error: "" });
     this.CustomerService.getCustomer(this.state.document)
       .then((data) => {
-        this.setState({ customers: JSON.parse(data), loading: false });
+        // Procesar el formato del cliente recibido
+        const parsedData = data;
+        const customer = {
+          ...parsedData,
+          address: `Calle ${parsedData.address.street} numero ${parsedData.address.number}\nCiudad: ${parsedData.address.city}, Pais: ${parsedData.address.country}`,
+        };
+        this.setState({ customers: customer, loading: false });
       })
       .catch((err) => {
         this.setState({ error: "Error al obtener el cliente", loading: false });
@@ -44,10 +62,10 @@ export default class ShowCustomer extends Component {
         className="Panel1"
       >
         <InputText
-         className="p-inputtext p-component"
-         value={document}
-         onChange={(e) => this.setDocument(e.target.value)}
-         placeholder="Ingrese el documento del cliente"
+          className="p-inputtext p-component"
+          value={document}
+          onChange={(e) => this.setDocument(e.target.value)}
+          placeholder="Ingrese el documento del cliente"
         />
         <Button
           onClick={this.handleFetchCustomer}
@@ -61,8 +79,8 @@ export default class ShowCustomer extends Component {
         {customers && (
           <DataTable value={[customers]} responsiveLayout="scroll">
             <Column field="document" header="ID" />
-            <Column field="first_name" header="First Name" />
-            <Column field="last_name" header="Last Name" />
+            <Column field="firstname" header="First Name" />
+            <Column field="lastname" header="Last Name" />
             <Column field="address" header="Address" />
             <Column field="phone" header="Phone" />
             <Column field="email" header="Email" />

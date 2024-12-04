@@ -7,10 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import edu.uptc.swii.retofinalquery.Order.Domain.Order;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
+@CrossOrigin("*")
 public class OrderController {
     @Autowired
     private OrderService orderService;
