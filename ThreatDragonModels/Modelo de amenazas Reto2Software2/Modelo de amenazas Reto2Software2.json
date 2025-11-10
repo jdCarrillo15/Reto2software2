@@ -11,7 +11,7 @@
     "diagrams": [
       {
         "id": 0,
-        "title": "Nuevo diagrama STRIDE",
+        "title": "Flujo de datos del sistema",
         "diagramType": "STRIDE",
         "placeholder": "Descripción de nuevo diagrama STRIDE",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
