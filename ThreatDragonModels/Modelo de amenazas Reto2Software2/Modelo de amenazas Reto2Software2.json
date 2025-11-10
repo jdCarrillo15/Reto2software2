@@ -1,0 +1,16 @@
+{
+  "version": "2.5.0",
+  "summary": {
+    "title": "Modelo de amenazas Reto2Software2",
+    "owner": "Juan David Carrillo Parra",
+    "description": "Sistema de gestión de pedidos, usuarios, con almacenamiento en MySQL y Mongo, aplicando autenticación en keycloack",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [],
+    "diagramTop": 0,
+    "reviewer": "",
+    "threatTop": 0
+  }
+}
